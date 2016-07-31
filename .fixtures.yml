@@ -1,0 +1,9 @@
+fixtures:
+    symlinks:
+      ovs_mule_server: "#{source_dir}"
+    repositories:
+      stdlib:
+        repo: https://github.com/puppetlabs/puppetlabs-stdlib.git
+        ref: 4.3.2
+      transition: https://github.com/puppetlabs/puppetlabs-transition.git
+      chown_r: https://github.com/GeoffWilliams/puppet-chown_r.git
