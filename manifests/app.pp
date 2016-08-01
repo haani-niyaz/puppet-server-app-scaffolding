@@ -5,7 +5,6 @@ define bat_mule::app(
   $credentials
 ) {
 
-
   # Ensure server install and config is run before app 
   require bat_mule::install
   require bat_mule::config
