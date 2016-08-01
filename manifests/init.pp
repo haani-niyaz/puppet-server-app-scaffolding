@@ -20,7 +20,6 @@ class bat_mule (
   
   class{'bat_mule::service':}
   
-
   contain ::bat_mule::install
   contain ::bat_mule::config
   contain ::bat_mule::service

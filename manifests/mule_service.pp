@@ -19,7 +19,7 @@ class profiles::mule_service {
     mule_server_version => hiera('bat_mule_server::version'),
    } 
 
-
+  # Do not set class ordering for defined type
   bat_mule::app { 'batarang':
     package_name     => hiera('bat_mule_app::package_name'),
     repo_name        => $repo_name,
