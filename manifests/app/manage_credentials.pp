@@ -1,4 +1,4 @@
-define ovs_mule::app::manage_credentials(
+define bat_mule::app::manage_credentials(
 	$key, 
 	$value, 
 	$file_path) {

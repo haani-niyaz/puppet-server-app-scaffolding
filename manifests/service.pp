@@ -1,4 +1,4 @@
-class ovs_mule::service{
+class bat_mule::service{
   
   service { 'muled':
     enable    => 'false',

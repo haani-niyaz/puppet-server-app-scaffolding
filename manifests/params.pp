@@ -1,4 +1,4 @@
-class ovs_mule::params{
+class bat_mule::params{
    $mule_server_package  = undef
    $mule_app_package     = undef
    $mule_server_version  = 'latest'

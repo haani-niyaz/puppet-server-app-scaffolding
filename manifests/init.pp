@@ -1,34 +1,28 @@
-# == Class: mule_server
-
-class ovs_mule (
-  $mule_server_package  = $ovs_mule::params::mule_server_package,
-  $mule_app_package  = $ovs_mule::params::mule_app_package,
+class bat_mule (
+  $mule_server_package  = $bat_mule::params::mule_server_package,
+  $mule_app_package     = $bat_mule::params::mule_app_package,
   $repo_name,
-  $mule_server_version  = $ovs_mule::params::mule_server_version,
-  $mule_server_on_boot = $ovs_mule::params::mule_server_on_boot,
-  $mule_server_status  = $ovs_mule::params::mule_server_status,
-) inherits ovs_mule::params{
+  $mule_server_version  = $bat_mule::params::mule_server_version,
+  $mule_server_on_boot  = $bat_mule::params::mule_server_on_boot,
+  $mule_server_status   = $bat_mule::params::mule_server_status,
+) inherits bat_mule::params{
 
-  class{'ovs_mule::install':
+  class{'bat_mule::install':
     server_package_name    => $mule_server_package,
     app_package_name       => $mule_app_package,
 	  repo_name              => $repo_name,
 	  server_package_version => $mule_server_version,
   } ->
 
-  class{'ovs_mule::config':
+  class{'bat_mule::config':
     server_package_version => $mule_server_version,
   } ~>
   
-  class{'ovs_mule::service':
-    # mule_server_on_boot => $mule_server_on_boot,
-    # mule_server_status  => $mule_server_status,
-  }
+  class{'bat_mule::service':}
   
 
-
-  contain ::ovs_mule::install
-  contain ::ovs_mule::config
-  contain ::ovs_mule::service
+  contain ::bat_mule::install
+  contain ::bat_mule::config
+  contain ::bat_mule::service
 }
 
